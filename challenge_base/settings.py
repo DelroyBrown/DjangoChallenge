@@ -11,7 +11,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = os.getenv('DEBUG')
 
-ALLOWED_HOSTS = ['django-challenge.herokuapp.com']
+ALLOWED_HOSTS = ['django-challenge.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
