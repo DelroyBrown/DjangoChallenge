@@ -7,8 +7,73 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/profile.css' %}">
 </head>
+@media screen and (max-width: 600px) {
+
+  body {
+      font-size: 16px;
+      line-height: 1.5;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+h2 {
+  margin: 0 0 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+p {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  color: #7f8c8d;
+}
+
+table {
+  width: 100%;
+  margin-top: 2rem;
+  border-collapse: collapse;
+}
+
+th {
+  padding: 0.5rem;
+  font-weight: bold;
+  text-align: left;
+  border-bottom: 2px solid #ddd;
+}
+
+td {
+  padding: 0.5rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+a {
+  display: block;
+  margin-top: 2rem;
+  padding: 0.5rem 1rem;
+  background-color: #3498db;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 3px;
+  text-align: center;
+}
+
+a:hover {
+  background-color: #2980b9;
+}
 
 <body>
 
