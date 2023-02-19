@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/profile.css' %}">
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Profile</h2>
+        <p>Username: {{ request.user.username }}</p>
+      
+        <h3>Purchase History</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Product Name</th>
+              <th>Price</th>
+              <th>Quantity Purchased</th>
+              <th>Total Price</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for purchase in purchases %}
+              <tr>
+                <td>{{ purchase.product.name }}</td>
+                <td>${{ purchase.product.price }}</td>
+                <td>{{ purchase.quantity_purchased }}</td>
+                <td>${{ purchase.get_total_price }}</td>
+                <td>{{ purchase.date }}</td>
+              </tr>
+            {% empty %}
+              <tr>
+                <td colspan="5">No purchases yet.</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+
+        <a href="{% url 'home' %}">Home</a>
+    </div>
+
+</body>
+
+</html>
